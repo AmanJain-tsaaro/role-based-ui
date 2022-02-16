@@ -71,7 +71,7 @@ const Login: NextPage = () => {
                 />
               </div>
               <div className='ml-2 md:ml-auto self-center'>
-                <FormControlLabel control={<></>} label={<a className={`text-xs cursor-pointer ${Styles.Link}`}>Forgot Password</a>} />
+                <FormControlLabel control={<></>} label={<a className={`text-xs cursor-pointer ${Styles.Link}`}>Forgot Password?</a>} />
               </div>
             </div>
             <Button className={`${Styles.Button} mt-3 text-lg font-semibold`} onClick = {() => handleLogin()}>Login</Button>
