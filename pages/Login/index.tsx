@@ -23,11 +23,11 @@ const Login: NextPage = () => {
     <div className='flex justify-start overflow-hidden'>
         <div className={`${Styles.Background} flex flex-col items-start justify-start h-screen`}>
             <div className='p-5'>
-              <img src='./Logo.png' alt='Logo' className='w-64' />
+              <img src='./Logo.svg' alt='Logo' className='w-64' />
             </div>
             <div className='flex justify-center items-center w-full relative py-3'>
               <div className={Styles.Circle}></div>
-              <img src='./LoginImage.png' alt='LoginImage' className={`${Styles.Image} max-h-64`}/>
+              <object data='./LoginSVG.svg' className={`${Styles.Image} max-h-64`}/>
             </div>
             <div className={`flex flex-wrap mx-auto text-center mt-5 ${Styles.CarouselText}`}>
               <h6 className='lg:text-lg mx-auto font-medium'>Gain visibility into your roles and control 
@@ -67,11 +67,11 @@ const Login: NextPage = () => {
               <div>
                 <FormControlLabel 
                 control={<Checkbox onClick={() => setChecked(!checked)} />} 
-                label={<span className='text-xs lg:text-sm'>I agree to the <a className={Styles.Link}>Terms & Conditions</a></span>}
+                label={<span className='text-xs'>I agree to the <a className={Styles.Link}>Terms & Conditions</a></span>}
                 />
               </div>
               <div className='ml-2 md:ml-auto self-center'>
-                <FormControlLabel control={<></>} label={<a className={`text-xs lg:text-sm cursor-pointer ${Styles.Link}`}>Forgot Password</a>} />
+                <FormControlLabel control={<></>} label={<a className={`text-xs cursor-pointer ${Styles.Link}`}>Forgot Password</a>} />
               </div>
             </div>
             <Button className={`${Styles.Button} mt-3 text-lg font-semibold`} onClick = {() => handleLogin()}>Login</Button>
