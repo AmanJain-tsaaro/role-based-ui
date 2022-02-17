@@ -45,6 +45,17 @@
     width: 45%;
 }
 
+.Input{
+    border: 1px solid #C3CBCD;
+    height: 3.563rem;
+    border-radius: 2.063rem;
+    padding-left: 1rem;
+}
+
+.Input:focus{
+    border: 1px solid #C3CBCD;
+}
+
 @media screen and (min-width:1024px) and (max-width:1280px) {
     .Image{
         width: 85%;
@@ -98,28 +109,53 @@
     .CarouselText{
         width: 100%;
     }  
+    .Image{
+        width: 95%;
+    }
+    .Input{
+        border: 1px solid #C3CBCD;
+        height: 2.563rem;
+        border-radius: 2.063rem;
+        padding-left: 1rem;
+    }
+    .Button{
+        background-color: #4F13A6!important;
+        border-radius: 2.063rem!important;
+        height: 2.563rem;
+        color: white!important;
+        text-transform: capitalize!important;
+    }
+    
 }
 
 @media screen and (min-width: 300px) and (max-width: 400px) {
     .Circle{
         background-color: #14265E;
         border-radius: 50%;
-        height: 7.5rem;
-        width: 7.5rem;
+        height: 9.5rem;
+        width: 9.5rem;
         display: inline-block;
     }
     .CarouselText{
         width: 100%;
     } 
+    .Image{
+        width: 95%;
+    }
+    .Input{
+        border: 1px solid #C3CBCD;
+        height: 2.563rem;
+        border-radius: 2.063rem;
+        padding-left: 1rem;
+    }
+    .Button{
+        background-color: #4F13A6!important;
+        border-radius: 2.063rem!important;
+        height: 2.563rem;
+        color: white!important;
+        text-transform: capitalize!important;
+    }
+    
+    
 }
 
-.Input{
-    border: 1px solid #C3CBCD;
-    height: 3.563rem;
-    border-radius: 2.063rem;
-    padding-left: 1rem;
-}
-
-.Input:focus{
-    border: 1px solid #C3CBCD;
-}
