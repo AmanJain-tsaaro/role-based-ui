@@ -3,9 +3,10 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { login } from '../../reducers/user'
-import { Button, Checkbox, FormControlLabel } from '@mui/material';
+import { Checkbox, FormControlLabel } from '@mui/material';
 import Styles from '../../styles/Login.module.css'
 import Input from '../../components/Input'
+import Button from '../../components/Button'
 
 const Login: NextPage = () => {
   const router = useRouter()
@@ -18,24 +19,45 @@ const Login: NextPage = () => {
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const [checked, setChecked] = useState<boolean>(false)
+  const [active, setActive] = useState({
+    buttonOne : false,
+    buttonTwo : false,
+    buttonThree : false
+  })
+
+  const CarouselImage = active.buttonOne? './LoginImage.png' : active.buttonTwo? './leeds.jpg' : './LoginImage.png'
 
   return (
     <div className='flex justify-start overflow-hidden'>
         <div className={`${Styles.Background} flex flex-col items-start justify-start h-screen`}>
-            <div className='p-3 md:p-5'>
+            <div className='p-5'>
               <img src='./Logo.svg' alt='Logo' className='max-w-full' />
             </div>
             <div className='flex justify-center items-center w-full relative py-3'>
               <div className={Styles.Circle}></div>
-              <object data='./LoginImage.png' className={`${Styles.Image} max-h-64`}/>
+              <object data={CarouselImage} className={`${Styles.Image} max-h-64`}/>
             </div>
             <div className={`flex flex-wrap mx-auto text-center mt-5 ${Styles.CarouselText}`}>
               <h6 className='text-xs md:text-lg mx-auto font-medium'>Gain visibility into your roles and control 
                   over your permissions</h6>
+              <div className='flex justify-center items-center mt-4 mx-auto'>
+              <button 
+              className={active.buttonOne? `${Styles.ActiveCarousel}` : Styles.Carousel} 
+              onClick = {() =>  setActive({buttonTwo : false, buttonThree : false, buttonOne : true})} >
+              </button>
+              <button 
+              className={active.buttonTwo? `${Styles.ActiveCarousel} ml-2` : `${Styles.Carousel} ml-2`} 
+              onClick = {() =>  setActive({buttonOne : false, buttonThree : false, buttonTwo : true})} >
+              </button>
+              <button 
+              className={active.buttonThree? `${Styles.ActiveCarousel} ml-2` : `${Styles.Carousel} ml-2`} 
+              onClick = {() =>  setActive({buttonOne : false, buttonTwo : false, buttonThree : true})}>
+              </button>
+              </div>
             </div>
         </div>
         <div className='flex flex-col h-screen flex-1'>
-          <div className='p-3 md:p-5 ml-auto text-xs md:text-base'>
+          <div className='p-5 ml-auto text-xs md:text-base'>
             Need Help? <a className={`${Styles.Link} no-underline hover:${Styles.Link} cursor-pointer`}>Contact us.</a>
           </div>
           <div className='mt-5 flex flex-col justify-center items-center'>
@@ -74,7 +96,7 @@ const Login: NextPage = () => {
                 <FormControlLabel control={<></>} label={<a className={`text-xs cursor-pointer ${Styles.Link}`}>Forgot Password</a>} />
               </div>
             </div>
-            <Button className={`${Styles.Button} mt-3 sm:text-xs md:text-lg font-semibold`} onClick = {() => handleLogin()}>Login</Button>
+            <Button execFunction={() => handleLogin()} text = {'Login'} style='mt-5 sm:text-xs md:text-lg font-semibold' />
           </div>
           <div className='mb-5 mt-auto ml-auto mr-auto'>
             <span className={`${Styles.Text} text-xs`}>@2022 EasyAudit. All Rights Reserved</span>

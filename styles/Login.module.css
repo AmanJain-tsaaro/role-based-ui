@@ -56,6 +56,25 @@
     border: 1px solid #C3CBCD;
 }
 
+
+.Carousel{
+    background-color: #E2DFDF;
+    height: 0.5rem;
+    width: 7.313rem;
+    border-radius: 1.375rem;
+}
+
+.ActiveCarousel{
+    background-color: #120839;
+    height: 0.5rem;
+    width: 7.313em;
+    border-radius: 1.375rem;
+}
+
+.ActiveCarousel:hover{
+    transition: background-color 1000ms linear;
+}
+
 @media screen and (min-width:1024px) and (max-width:1280px) {
     .Image{
         width: 85%;
@@ -80,6 +99,21 @@
     .CarouselText{
         width: 75%;
     }  
+    .Carousel{
+        background-color: #E2DFDF;
+        height: 0.5rem;
+        width: 6.813em;
+        border-radius: 1.375rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 800px) {
+    .Carousel{
+        background-color: #E2DFDF;
+        height: 0.5rem;
+        width: 6.313em;
+        border-radius: 1.375rem;
+    }
 }
 
 @media screen and (min-width: 600px) and (max-width: 767px) {
@@ -96,6 +130,12 @@
     .CarouselText{
         width: 75%;
     }  
+    .Carousel{
+        background-color: #E2DFDF;
+        height: 0.5rem;
+        width: 4.813rem;
+        border-radius: 1.375rem;
+    }
 }
 
 @media screen and (min-width: 400px) and (max-width: 600px) {
@@ -125,8 +165,14 @@
         color: white!important;
         text-transform: capitalize!important;
     }
-    
+    .Carousel{
+        background-color: #E2DFDF;
+        height: 0.5rem;
+        width: 5.313rem;
+        border-radius: 1.375rem;
+    }
 }
+
 
 @media screen and (min-width: 300px) and (max-width: 400px) {
     .Circle{
